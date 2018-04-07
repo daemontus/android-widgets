@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Swap Layout</string>
+    <string name="swap">Swap!</string>
+    <string name="clear">Clear!</string>
+    <string name="content">Text View: %d</string>
+    <string name="swap_layout">Swap Layout</string>
+</resources>

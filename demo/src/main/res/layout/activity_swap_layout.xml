@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SwapLayoutActivity">
+
+    <Button
+        android:id="@+id/swap"
+        android:text="@string/swap"
+        android:layout_marginTop="64dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/clear"
+        android:text="@string/clear"
+        android:layout_marginBottom="64dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <daemontus.widget.SwapLayout
+        android:id="@+id/swap_layout"
+        android:foregroundGravity="center"
+        android:background="@drawable/swap_layout_background"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+</merge>
