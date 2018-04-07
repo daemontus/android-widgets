@@ -21,6 +21,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation project(':swap_layout')
-    implementation project(':swap_image_button')
+    implementation project(':swap-layout')
+    implementation project(':swap-image-button')
 }
