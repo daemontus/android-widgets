@@ -4,4 +4,8 @@
     <string name="clear">Clear!</string>
     <string name="content">Text View: %d</string>
     <string name="swap_layout">Swap Layout</string>
+    <string name="swap_image_button">Swap Image Button</string>
+    <string name="state_none">None</string>
+    <string name="state_a">State A</string>
+    <string name="state_b">State B</string>
 </resources>

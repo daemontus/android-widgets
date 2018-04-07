@@ -9,4 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+    <Button
+        android:id="@+id/swap_image_button"
+        android:text="@string/swap_image_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

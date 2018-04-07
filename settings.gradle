@@ -1,1 +1,1 @@
-include ':demo', ':swaplayout'
+include ':demo', ':swap_layout', ':swap_image_button'

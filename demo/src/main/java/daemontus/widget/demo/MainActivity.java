@@ -15,11 +15,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button swapLayout = findViewById(R.id.swap_layout);
-        swapLayout.setOnClickListener(new View.OnClickListener() {
+        swapLayout.setOnClickListener(openActivity(SwapLayoutActivity.class));
+
+        Button swapImageButton = findViewById(R.id.swap_image_button);
+        swapImageButton.setOnClickListener(openActivity(SwapImageButtonActivity.class));
+    }
+
+    private View.OnClickListener openActivity(final Class<?> activity) {
+        return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SwapLayoutActivity.class));
+                startActivity(new Intent(MainActivity.this, activity));
             }
-        });
+        };
     }
 }
