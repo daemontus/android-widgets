@@ -4,13 +4,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.daemontus'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion sdk
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0.0"
+        targetSdkVersion sdk
+        versionCode versionCode
+        versionName versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
