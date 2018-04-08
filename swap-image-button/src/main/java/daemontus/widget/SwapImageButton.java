@@ -72,6 +72,7 @@ public class SwapImageButton extends SwapLayout implements SwapLayout.SwappedOut
         child.setImageResource(state.src);
         child.setBackgroundResource(state.background);
         child.setContentDescription(getContext().getString(state.contentDescription));
+        child.setScaleType(ImageView.ScaleType.CENTER);
         return child;
     }
 
