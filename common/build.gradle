@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.daemontus'
+
+android {
+    compileSdkVersion sdk
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion sdk
+        versionCode versionCode
+        versionName versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+}
