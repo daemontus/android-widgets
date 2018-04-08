@@ -8,4 +8,5 @@
     <string name="state_none">None</string>
     <string name="state_a">State A</string>
     <string name="state_b">State B</string>
+    <string name="loop_view_pager">Loop View Pager</string>
 </resources>

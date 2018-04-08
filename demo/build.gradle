@@ -23,4 +23,5 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':swap-layout')
     implementation project(':swap-image-button')
+    implementation project(':loop-view-pager')
 }

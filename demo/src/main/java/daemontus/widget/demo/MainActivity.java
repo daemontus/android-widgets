@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button swapImageButton = findViewById(R.id.swap_image_button);
         swapImageButton.setOnClickListener(openActivity(SwapImageButtonActivity.class));
+
+        Button loopViewPager = findViewById(R.id.loop_view_pager);
+        loopViewPager.setOnClickListener(openActivity(LoopViewPagerActivity.class));
     }
 
     private View.OnClickListener openActivity(final Class<?> activity) {
