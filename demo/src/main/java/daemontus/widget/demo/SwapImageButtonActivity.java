@@ -28,6 +28,9 @@ public class SwapImageButtonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SwapImageButtonActivity.this, "Clicked!", Toast.LENGTH_SHORT).show();
+                // Enable this to see swapping + interaction at the same time.
+                //SwapImageButton.State newState = button.getState() == STATE_A ? STATE_B : STATE_A;
+                //button.setState(newState);
             }
         });
 

@@ -16,6 +16,10 @@ import android.widget.ImageView;
 /**
  * SwapImageButton extends the implementation of SwapLayout to provide a way to
  * create stateful image buttons with parcelable state objects.
+ *
+ * Note that the background element is not applied to the child view, but this layout,
+ * because we don't want it to animate during transitions. This means it has to be swapped
+ * AFTER the animation is dine.
  */
 public class SwapImageButton extends SwapLayout implements SwapLayout.SwappedOut {
 
@@ -38,6 +42,7 @@ public class SwapImageButton extends SwapLayout implements SwapLayout.SwappedOut
 
     @Override
     public void onSwappedOut(@NonNull View child) {
+        updateBackgroundToMatchState();
         if (child.getTag() != null && child.getTag() instanceof State) {
             State state = (State) child.getTag();
             stateCache.put(state, child);
@@ -49,7 +54,7 @@ public class SwapImageButton extends SwapLayout implements SwapLayout.SwappedOut
         return state;
     }
 
-    public void setState(@Nullable State state) {
+    public void setState(@Nullable final State state) {
         if (this.state == state) return;
         if (this.state != null && this.state.equals(state)) return;
 
@@ -60,8 +65,20 @@ public class SwapImageButton extends SwapLayout implements SwapLayout.SwappedOut
                 child = newViewForState(state);
             }
         }
+        if (this.state == null) {
+            // If state is null, nothing is going to be swapped out and we can update directly.
+            updateBackgroundToMatchState();
+        }
         this.state = state;
         swapChild(child, this);
+    }
+
+    private void updateBackgroundToMatchState() {
+        if (state == null) {
+            this.setBackgroundResource(0);
+        } else {
+            this.setBackgroundResource(state.background);
+        }
     }
 
     @NonNull
@@ -70,7 +87,6 @@ public class SwapImageButton extends SwapLayout implements SwapLayout.SwappedOut
         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.CENTER;
         child.setImageResource(state.src);
-        child.setBackgroundResource(state.background);
         child.setContentDescription(getContext().getString(state.contentDescription));
         child.setScaleType(ImageView.ScaleType.CENTER);
         return child;
